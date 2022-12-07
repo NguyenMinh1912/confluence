@@ -1,15 +1,24 @@
-import Following from "~/page/Following";
-import Home from "~/page/Home";
+import { FC, ReactElement } from "react";
+import Following from "~/pages/Following";
+import Home from "~/pages/Home";
+
+interface Route {
+    path: string;
+    component: FC;
+    layout?: FC<any>;
+}
 
 // Public routes
-const publicRoutes: any[] = [
+const publicRoutes: Route[] = [
     {
         path: '/',
-        component: Home
+        component: Home,
+        layout: null
     },
     {
         path: '/following',
-        component: Following
+        component: Following,
+      
     },
 ];
 
